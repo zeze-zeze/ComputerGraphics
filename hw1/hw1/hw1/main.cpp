@@ -92,11 +92,8 @@ void display()
 	glTranslatef(3, 0, -3);
 	glRotatef(degrees[0], 0, 1, 0);
 	LoadModel(elephant);
-	glPopMatrix();
 
-	glPushMatrix();
-	glTranslatef(1, 0.5, -5);
-	glRotatef(degrees[0], 0, 1, 0);
+	glTranslatef(-2, 0.5, -2);
 	glScalef(0.5, 0.5, 0.5);
 	LoadModel(cube);
 	glPopMatrix();
