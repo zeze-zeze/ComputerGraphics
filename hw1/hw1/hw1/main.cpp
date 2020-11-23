@@ -91,6 +91,7 @@ void display()
 	glPushMatrix();
 	glTranslatef(3, 0, -3);
 	glRotatef(degrees[0], 0, 1, 0);
+	glScalef(2, 2, 2);
 	LoadModel(elephant);
 
 	glTranslatef(-2, 0.5, -2);
