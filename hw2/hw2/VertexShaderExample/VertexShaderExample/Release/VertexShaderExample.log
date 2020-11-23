@@ -1,0 +1,2 @@
+﻿  Main.cpp
+Main.cpp(1): fatal error C1083: 無法開啟包含檔案: 'FreeImage.h': No such file or directory
