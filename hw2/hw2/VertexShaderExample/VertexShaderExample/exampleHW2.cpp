@@ -100,7 +100,7 @@ void display() {
 	glGetFloatv(GL_MODELVIEW_MATRIX, mmtx);
  	GLint pmatLoc = glGetUniformLocation(program, "Projection");
 	GLint mmatLoc = glGetUniformLocation(program, "ModelView");
-
+	
 	glUseProgram(program);
 
 	//input the modelview matrix into vertex shader

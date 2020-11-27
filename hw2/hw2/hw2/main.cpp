@@ -59,7 +59,10 @@ void shaderInit() {
 	// Hint:
 	// 1. createShader
 	// 2. createProgram
-
+	GLuint vert = createShader("Shaders/vertexShader.vert", "vertex");
+	GLuint frag = createShader("Shaders/fragmentShader.frag", "fragment");
+	program = createProgram(vert, frag);
+	/*-------------------------*/
 }
 
 void bindbufferInit() {
@@ -68,7 +71,28 @@ void bindbufferInit() {
 	//	 Hint:
 	// 1. Setup VAO
 	// 2. Setup VBO of vertex positions, normals, and texcoords
+	// https://www.itread01.com/content/1541843428.html
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+	glGenBuffers(3, VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * model->positions.size(), &model->positions[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * model->normals.size(), &model->normals[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+	glEnableVertexAttribArray(1);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[2]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * model->texcoords.size(), &model->texcoords[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+	glEnableVertexAttribArray(2);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	/*-------------------------*/
 }
 
 void textureInit() {
@@ -86,7 +110,7 @@ glm::mat4 getP()
 	// set perspective view
 	float fov = 45.0f;
 	float aspect = windowSize[0] / windowSize[1];
-	float nearDistance = 1.0f;
+	float nearDistance = 2.0f;
 	float farDistance = 1000.0f;
 	return glm::perspective(glm::radians(fov), aspect, nearDistance, farDistance);
 }
@@ -137,7 +161,15 @@ void LoadTexture(unsigned int& texture, const char* tFileName) {
 }
 
 void keyboard(unsigned char key, int x, int y) {
-
+	switch (key)
+	{
+	case 'w':
+		LoadTexture(basistexture, "basis.jpg");
+		break;
+	case 's':
+		LoadTexture(basistexture, "love.jpg");
+		break;
+	}
 }
 
 void idle() {
@@ -156,7 +188,7 @@ void DrawBasis() {
 	// viewing and modeling transformation
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(7.5, 5.0, 7.5,// eye
+	gluLookAt(7.5, 5, 7.5,// eye
 		0.0, 0.0, 0.0,     // center
 		0.0, 1.0, 0.0);    // up
 
@@ -166,13 +198,71 @@ void DrawBasis() {
 	//// if you don't need this, you can just deleting
 	float edge = 20;
 	float radius = 4;
-	float pi = 3.1415926;
+	float PI = 3.1415926;
 
 	//// TODO: ////
 	//
 	// draw the basis and make the side of basis with texture
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, basistexture);
+	
+	glPolygonMode(GL_FRONT, GL_FILL);
+	glPushMatrix();
+	for (int i = 0; i < edge; i++) {
+		glRotatef(18 * i, 0, 1, 0);
+		glBegin(GL_TRIANGLES);
+		glNormal3f(0, 1, 0);
 
+		glVertex3f(0, 0, 0);
+		glVertex3f(radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glVertex3f(0, 0, radius * sin(PI / 180 * 81));
+
+		glVertex3f(0, 0, 0);
+		glVertex3f(-radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glVertex3f(0, 0, radius * sin(PI / 180 * 81));
+		glEnd();
+
+		glBegin(GL_QUADS);
+		glNormal3f(0, 0, 1);
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(-radius * cos(PI / 180 * 81), -5, radius * sin(PI / 180 * 81));
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(radius * cos(PI / 180 * 81), -5, radius * sin(PI / 180 * 81));
+		glEnd();
+	}
+
+	for (int i = 0; i < edge; i++) {
+		glRotatef(-18 * i, 0, 1, 0);
+		glBegin(GL_TRIANGLES);
+		glNormal3f(0, 1, 0);
+
+		glVertex3f(0, 0, 0);
+		glVertex3f(radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glVertex3f(0, 0, radius * sin(PI / 180 * 81));
+
+		glVertex3f(0, 0, 0);
+		glVertex3f(-radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glVertex3f(0, 0, radius * sin(PI / 180 * 81));
+		glEnd();
+
+		glBegin(GL_QUADS);
+		glNormal3f(0, 0, 1);
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-radius * cos(PI / 180 * 81), 0, radius * sin(PI / 180 * 81));
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(-radius * cos(PI / 180 * 81), -5, radius * sin(PI / 180 * 81));
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(radius * cos(PI / 180 * 81), -5, radius * sin(PI / 180 * 81));
+		glEnd();
+	}
 	glPopMatrix();
+	/*-------------------------*/
 }
 
 void DrawUmbreon()
@@ -181,16 +271,23 @@ void DrawUmbreon()
 	M = glm::rotate(M, glm::radians(angle), glm::vec3(0, 1, 0));
 	M = glm::translate(M, glm::vec3(0, 1.3, 0));
 
-	GLuint ModelMatrixID = glGetUniformLocation(program, "M");
-	glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &M[0][0]);
-
 	//// TODO: ////
 	// pass projection matrix, and view matrix and trigger by Uniform (use getP() amd getV())
 	// also pass modeltexture to shader and trigger by Uniform
-
-
+	glUseProgram(program);
+	GLuint ModelMatrixID = glGetUniformLocation(program, "ModelView");
+	glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &M[0][0]);
+	GLint pmatLoc = glGetUniformLocation(program, "Projection");
+	GLint mmatLoc = glGetUniformLocation(program, "Vertex");
+	glUniformMatrix4fv(pmatLoc, 1, GL_FALSE, &getP()[0][0]);
+	glUniformMatrix4fv(mmatLoc, 1, GL_FALSE, &getV()[0][0]);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, modeltexture);
+	GLint texLoc = glGetUniformLocation(program, "Texture");
+	glUniform1i(texLoc, 0);
+	/*-------------------------*/
 	glBindVertexArray(VAO);
-	glDrawArrays(GL_QUADS, 0, 4 * model->fNum);
+	glDrawArrays(GL_QUADS, 0, 40 * model->fNum);
 
 	glBindVertexArray(0);
 	glActiveTexture(0);

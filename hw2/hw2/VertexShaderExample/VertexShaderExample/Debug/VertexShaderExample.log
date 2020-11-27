@@ -1,4 +1,4 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: 中繼目錄 (Debug\) 包含從其他專案 (DrawTriangle.vcxproj) 共用的檔案。這可能導致錯誤的清除和重建行為。
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (DrawTriangle.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   exampleHW2.cpp
-C:\Users\wl030\Desktop\CG_助教\hw2\hw2\VertexShaderExample\VertexShaderExample\include\FreeImage.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
-  VertexShaderExample.vcxproj -> C:\Users\wl030\Desktop\CG_助教\hw2\hw2\Debug\VertexShaderExample.exe
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw2\hw2\VertexShaderExample\VertexShaderExample\include\FreeImage.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
+  VertexShaderExample.vcxproj -> D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw2\hw2\Debug\VertexShaderExample.exe
