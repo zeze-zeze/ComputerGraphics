@@ -1,0 +1,11 @@
+﻿  main.cpp
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\include\FreeImage.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(47,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(47,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(149,18): warning C4244: '=': conversion from 'GLsizei' to 'float', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(150,18): warning C4244: '=': conversion from 'GLsizei' to 'float', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(182,49): warning C4305: '+=': truncation from 'double' to 'float'
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(186,18): warning C4305: '+=': truncation from 'double' to 'float'
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(222,19): warning C4305: '+=': truncation from 'double' to 'float'
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\main.cpp(223,25): warning C4305: '+=': truncation from 'double' to 'float'
+  hw4.vcxproj -> D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\Debug\hw4.exe
