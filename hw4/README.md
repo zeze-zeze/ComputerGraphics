@@ -1,6 +1,7 @@
 # 2020 NCTU Computer Graphics Final Project
 * Title: UFO vs Spaceship
 * Author: zeze
+* [Video](https://www.youtube.com/watch?v=8j6OWpxDEDc&feature=youtu.be)
 
 ## Introduction
 It is my final project of the computer graphics in NCTU. Me, who is totally novice to the computer graphics, finally complete the project. 
