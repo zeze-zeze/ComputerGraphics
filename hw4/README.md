@@ -14,10 +14,10 @@ Any suggestion and any kind of uses are welcome.
 
 ## Snapshot
 * Before bumping
-![img](assets/img1)
+![img](assets/img1.PNG)
 
 * Explosion
-![img](assets/img2)
+![img](assets/img2.PNG)
 
 ## Reference
 1. [3D model - Intergalactic Spaceship In Blender 2.8 Eevee](https://free3d.com/3d-model/intergalactic-spaceship-in-blender-28-eevee-394046.html)
