@@ -43,5 +43,13 @@
     <ClInclude Include="include\Object.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="include\freeglut.h" />
+    <ClInclude Include="include\freeglut_ext.h" />
+    <ClInclude Include="include\freeglut_std.h" />
+    <ClInclude Include="include\FreeImage.h" />
+    <ClInclude Include="include\glew.h" />
+    <ClInclude Include="include\glut.h" />
+    <ClInclude Include="include\shader.h" />
+    <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
 </Project>

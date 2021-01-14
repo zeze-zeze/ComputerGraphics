@@ -80,6 +80,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\dll;D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\glm;D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\lib;$(LibraryPath)</LibraryPath>
+    <ReferencePath>D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw4\hw4\dll\Shaders;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -118,7 +121,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -162,7 +165,15 @@
     <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\freeglut.h" />
+    <ClInclude Include="include\freeglut_ext.h" />
+    <ClInclude Include="include\freeglut_std.h" />
+    <ClInclude Include="include\FreeImage.h" />
+    <ClInclude Include="include\glew.h" />
+    <ClInclude Include="include\glut.h" />
     <ClInclude Include="include\Object.h" />
+    <ClInclude Include="include\shader.h" />
+    <ClInclude Include="include\stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
