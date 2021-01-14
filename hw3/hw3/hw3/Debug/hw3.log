@@ -1,0 +1,12 @@
+﻿  main.cpp
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\include\FreeImage.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(48,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(48,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(137,14): warning C4305: '+=': truncation from 'double' to 'float'
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(142,18): warning C4244: '=': conversion from 'GLsizei' to 'float', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(143,18): warning C4244: '=': conversion from 'GLsizei' to 'float', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(294,46): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(294,31): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(310,31): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\hw3\main.cpp(310,24): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  hw3.vcxproj -> D:\nctu\大四上\計算機圖學概論\ComputerGraphics\hw3\hw3\Debug\hw3.exe
